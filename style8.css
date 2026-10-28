@@ -1,0 +1,274 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #11184a;
+    color: white;
+    overflow-x: hidden;
+}
+
+header {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    background-color: #11182d;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: lightblue;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: lightblue;
+    transform: translateY(-3px);
+}
+
+.hero {
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 60px 20px;
+    overflow: hidden;
+}
+
+.hero-text {
+    max-width: 750px;
+    animation: 1.2s ease-out heroEnter;
+}
+
+.small-title {
+    color: #0baaff;
+    letter-spacing: 3px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #00baff;
+}
+
+.description {
+    color: whitesmoke;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* START BUTTON */
+
+.start-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    background-color: #0baaff;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.start-btn:hover {
+    transform: translate(-5px) scale(1.05);
+    background-color: #0088cc;
+}
+
+.start-btn:active {
+    transform: scale(0.95);
+}
+
+/* CODE ICON */
+
+.code-icon {
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #00baff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 0 0 10px #00baff;
+    animation: floating 2.5s ease-in-out infinite;
+}
+
+
+/* COURSES */
+.courses {
+    padding: 80px 8%;
+    text-align: center;
+    background-color: #10182e;
+}
+
+.courses h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.course-intro {
+    color: #9da6bd;
+    margin-bottom: 50px;
+}
+
+.course-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* COURSE CARD */
+
+.course-card {
+    width: 300px;
+    padding: 35px 25px;
+    background-color: #18213b;
+    border-radius: 15px;
+    transition: 0.4s;
+    position: relative;
+    animation: cardEnter 1s ease-out backwards;
+}
+
+.course-card:nth-child(1){
+    animation-delay: 0.2s;
+}
+
+.course-card:nth-child(2){
+    animation-delay: 0.4s;
+}
+
+.course-card:nth-child(3){
+    animation-delay: 0.6s;
+}
+
+.course-card:hover {
+    transform: translateY(-15px) scale(1.04);
+    box-shadow: 0 15px 35px rgba(0, 170, 235, 0.25);
+}
+
+.course-card button {
+    padding: 10px 20px;
+    border: 2px solid #00aaff;
+    background-color: transparent;
+    color: #00aaff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.course-card button:hover {
+    background-color: #00aaff;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* SCROLL INDICATOR */
+
+.scroll {
+    text-align: center;
+    padding: 30px;
+    background-color: #10182e;
+    color: #8d96aa;
+}
+
+.scroll span {
+    display: block;
+    font-size: 30px;
+    animation: scrollBounce 1s infinite alternate;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #080c18;
+    color: #70798e;
+}
+
+/* ANIMATION */
+
+@keyframes heroEnter {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(10deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollBounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(10px);
+    }
+}
